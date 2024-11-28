@@ -1,21 +1,83 @@
-[gd_scene load_steps=2 format=3 uid="uid://rw0ujptc6305"]
+[gd_scene load_steps=3 format=3 uid="uid://c1xyjeawu8i3q"]
 
-[ext_resource type="Script" path="res://Scripts/Tela_Carregando.gd" id="1_1mgbd"]
+[ext_resource type="Script" path="res://Scripts/Tela_Carregando.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://n2gq4hf5tvxp" path="res://Assets/caixa.png" id="2_ug0ae"]
 
-[node name="Control" type="Control"]
+[node name="Controle" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_1mgbd")
+script = ExtResource("1")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="RetanguloCor" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 1)
+
+[node name="RetanguloTextura" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 37.0
+offset_bottom = -33.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.559376, 0.533709, 0.317891, 1)
+texture = ExtResource("2_ug0ae")
+expand_mode = 2
+
+[node name="BarraProgresso" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.739198
+anchor_right = 0.7
+anchor_bottom = 0.789198
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00517, 1.00084)
+
+[node name="TextoTopo" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.1
+offset_bottom = -28.8
+text = "A cada fase terminada você ganhará uma imagem na galeria!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextoInferiorEsquerdo" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.95
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 0.400024
+text = "Carregando as ruas de Feira..."
+vertical_alignment = 1
+
+[node name="TextoInferiorDireito" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.95
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.400024
+offset_right = -25.0
+text = "Versão: 001"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="RetanguloDesvanecer" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 1)

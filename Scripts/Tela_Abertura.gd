@@ -1,53 +1,53 @@
 extends Control
 
-# Lista de imagens (caminho completo dos arquivos)
-var patrocinadores = [
-	preload("res://Assets/logo_Clinica Radiologica.png"),
-	preload("res://Assets/logo_da_hotel_Acalanto.png"),
-	preload("res://Assets/logo_da_Prefeitura.png"),
-	preload("res://Assets/logo_Fiat_Jacuipe.png")
+@onready var logo_textura: TextureRect = $LogoTextura
+@onready var fade_retangulo: ColorRect = $FadeRetangulo
+
+var logos = [
+    "res://Assets/logo_Clinica Radiologica.png",
+    "res://Assets/logo_da_hotel_Acalanto.png",
+    "res://Assets/logo_da_Prefeitura.png",
+    "res://Assets/logo_Fiat_Jacuipe.png"
 ]
 
-# Índice atual da imagem
-var indice_atual = 0
-
-# Referências para nós
-@onready var logo = $TextureRect  # O nó que exibe as imagens
-@onready var timer = $Timer       # O timer para alternar as imagens
-@onready var fundo_preto = $ColorRect  # O nó que exibe o fundo preto
-@onready var anim_fade = $AnimationPlayer  # O nó que controla a animação de fade
+var indice_logo_atual = 0
+var tempo_exibicao = 1.0  # Tempo em segundos para cada logo
+var pular_logo = false  # Variável para controlar o pulo de logo
 
 func _ready():
-	# Configura a primeira imagem e inicia a animação de fade in
-	logo.texture = patrocinadores[indice_atual]
-	anim_fade.play("fade_in")
+    mostrar_proximo_logo()
 
-func _process(_delta):
-	if Input.is_action_just_pressed("ui_select"):
-		# Pula para a próxima imagem se a tecla espaço for pressionada
-		_proxima_imagem()
+func mostrar_proximo_logo():
+    if indice_logo_atual < logos.size():
+        logo_textura.texture = load(logos[indice_logo_atual])
+        indice_logo_atual += 1
+        fade_in()
+    else:
+        mudar_para_proxima_cena()
 
-func _on_Timer_timeout():
-	# Inicia a animação de fade out
-	anim_fade.play("fade_out")
+func fade_in():
+    fade_retangulo.modulate.a = 1.0
+    fade_retangulo.show()
+    var tween = create_tween()
+    tween.tween_property(fade_retangulo, "modulate:a", 0.0, 1.0)
+    tween.connect("finished", Callable(self, "esperar_exibicao"))
 
-func _on_AnimationPlayer_animation_finished(anim_name):
-	if anim_name == "fade_out":
-		_proxima_imagem()
-	elif anim_name == "fade_in":
-		# Reinicia o timer para a próxima imagem
-		timer.start(2)  # Tempo de espera antes de iniciar o fade out
+func esperar_exibicao():
+    await get_tree().create_timer(tempo_exibicao).timeout
+    if not pular_logo:
+        fade_out()
+    else:
+        pular_logo = false
+        fade_out()
 
-func _proxima_imagem():
-	# Avança para a próxima imagem
-	indice_atual += 1
-	if indice_atual < patrocinadores.size():
-		logo.texture = patrocinadores[indice_atual]
-		# Inicia a animação de fade in
-		anim_fade.play("fade_in")
-	else:
-		_ir_para_proxima_tela()
+func fade_out():
+    var tween = create_tween()
+    tween.tween_property(fade_retangulo, "modulate:a", 1.0, 1.0)
+    tween.connect("finished", Callable(self, "mostrar_proximo_logo"))
 
-func _ir_para_proxima_tela():
-	# Muda para a próxima cena (exemplo: tela de carregamento)
-	get_tree().change_scene("res://Scenes/Tela_Carregamento.tscn")
+func mudar_para_proxima_cena():
+    get_tree().change_scene("res://Scenes/Tela_Carregando.tscn")
+
+func _input(event):
+    if event.is_action_pressed("ui_accept"):  # Verifica se a tecla espaço foi pressionada
+        mudar_para_proxima_cena()  # Pula todos os logos e vai para a próxima cena

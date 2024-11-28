@@ -1,12 +1,41 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://df4iq8vypg0qu"]
 
-[ext_resource path="res://TelaPatrocinadores.gd" type="Script" id=1]
+[ext_resource type="Script" path="res://Scripts/Tela_Abertura.gd" id="1"]
 
-[node name="TelaPatrocinadores" type="Control"]
-script = ExtResource( 1 )
+[node name="Controle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-rect_min_size = Vector2( 400, 300 )
+[node name="Fundo" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.501961, 0.294118, 0.027451, 0.747)
 
-[node name="SponsorsList" type="VBoxContainer" parent="ScrollContainer"]
-size_flags_vertical = 3
+[node name="LogoTextura" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 323.0
+offset_top = 123.0
+offset_right = -288.0
+offset_bottom = -111.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 3
+
+[node name="FadeRetangulo" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 1)

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Ruas_de_Feira"
-run/main_scene="res://Scenes/Tela_Abertura.tscn"
+run/main_scene="res://Scenes/Tela_Carregando.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
