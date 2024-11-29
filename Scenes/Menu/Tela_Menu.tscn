@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://d3m3dmt07ext1"]
+
+[node name="TelaMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlanoDeFundo" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+stretch_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TituloPanel" type="Panel" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Botoes" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TituloPanel#TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+stretch_mode = 2
+
+[node name="TituloPanel#Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Feira de Santana - Bahia"
+
+[node name="Botoes#IniciarJogoBotao" type="Button" parent="."]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 270.0
+offset_right = 326.0
+offset_bottom = 301.0
+text = "Iniciar Jogo"
+
+[node name="Botoes#EscolherEstagioBotao" type="Button" parent="."]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 421.0
+offset_right = 413.0
+offset_bottom = 452.0
+text = "Escolher Estágio"
+
+[node name="Botoes#GaleriaCulturalBotao" type="Button" parent="."]
+layout_mode = 0
+offset_left = 383.0
+offset_top = 519.0
+offset_right = 513.0
+offset_bottom = 550.0
+text = "Galeria Cultural"
+
+[node name="Botoes#DesafiosLocaisBotao" type="Button" parent="."]
+layout_mode = 0
+offset_left = 648.0
+offset_top = 267.0
+offset_right = 774.0
+offset_bottom = 298.0
+text = "Desafios Locais"
+
+[node name="Botoes#ConfiguracoesBotao" type="Button" parent="."]
+layout_mode = 0
+offset_left = 474.0
+offset_top = 343.0
+offset_right = 593.0
+offset_bottom = 374.0
+text = "Configurações"

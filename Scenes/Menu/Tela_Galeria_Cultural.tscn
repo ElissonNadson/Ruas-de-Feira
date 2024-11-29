@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://d3m3dmt07ext1"]
+[gd_scene format=3 uid="uid://3rxhho7slpo6"]
 
-[node name="TelaMenu" type="Control"]
+[node name="TelaGaleriaCultural" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
