@@ -1,6 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3m3dmt07ext1"]
+[gd_scene load_steps=16 format=3 uid="uid://d3m3dmt07ext1"]
 
+[ext_resource type="Script" path="res://Scripts/Menu/Tela_Menu.gd" id="1_dcs71"]
 [ext_resource type="Texture2D" uid="uid://dpj2ewr1dwkj2" path="res://Assets/background_loading.jpg" id="1_jpgra"]
+[ext_resource type="Texture2D" uid="uid://dntexrmcvlrww" path="res://Assets/titulo.svg" id="2_02oca"]
+[ext_resource type="Texture2D" uid="uid://d0fkavt3eq1e8" path="res://Assets/Tela_Menu/Botão_Play/Default.svg" id="2_svg"]
+[ext_resource type="Texture2D" uid="uid://k12vypl0or3l" path="res://Assets/Tela_Menu/Botão_Play/Hover.svg" id="3_svg"]
+[ext_resource type="Texture2D" uid="uid://nldqbnwhhx1e" path="res://Assets/Tela_Menu/Botão_Audio_On/Default.svg" id="5_7naeq"]
+[ext_resource type="Texture2D" uid="uid://bbqsvy5objo01" path="res://Assets/Tela_Menu/Botão_Audio_On/Hover.svg" id="6_owdii"]
+[ext_resource type="Texture2D" uid="uid://cp88pdeh3hokk" path="res://Assets/Tela_Menu/Botão_Audio_Off/Default.svg" id="7_r4tcf"]
+[ext_resource type="Texture2D" uid="uid://ryluntsb1x1g" path="res://Assets/Tela_Menu/Botão_menu/Default.svg" id="8_1h81e"]
+[ext_resource type="Texture2D" uid="uid://dhwo6c2pb5eqr" path="res://Assets/Tela_Menu/Botão_menu/Hover.svg" id="9_oxedt"]
+[ext_resource type="Texture2D" uid="uid://buoa6a38ieyuj" path="res://Assets/Tela_Menu/Botão_Audio_Off/Hover.svg" id="10_u2kpo"]
+[ext_resource type="Texture2D" uid="uid://dabvc31ixxoex" path="res://Assets/Tela_Menu/Box_Orange_Rounded.svg" id="12_nunly"]
+[ext_resource type="Texture2D" uid="uid://btna7cuu1lf2d" path="res://Assets/Tela_Menu/Banner_Orange.svg" id="13_amlae"]
+[ext_resource type="Texture2D" uid="uid://kowrs4f24y5a" path="res://Assets/Tela_Menu/ButtonText_Large_Blue_Round.png" id="14_fa1d7"]
+[ext_resource type="Texture2D" uid="uid://d0t6cpqek5eux" path="res://Assets/Tela_Menu/PremadeButtons_XRed.svg" id="15_4n68k"]
 
 [node name="TelaMenu" type="Control"]
 layout_mode = 3
@@ -9,6 +23,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_dcs71")
+metadata/_edit_horizontal_guides_ = [411.0]
 
 [node name="PlanoDeFundo" type="TextureRect" parent="."]
 layout_mode = 1
@@ -20,51 +36,119 @@ grow_vertical = 2
 texture = ExtResource("1_jpgra")
 expand_mode = 1
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 2
-offset_left = 375.0
-offset_top = 158.0
-offset_right = 777.0
-offset_bottom = 496.0
+[node name="Titulo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 294.0
+offset_top = -32.0
+offset_right = 792.0
+offset_bottom = 466.0
+texture = ExtResource("2_02oca")
+expand_mode = 1
+stretch_mode = 4
 
-[node name="TituloPanel#Label" type="Label" parent="Panel"]
+[node name="Botão_Iniciar_jogo" type="TextureButton" parent="."]
+texture_filter = 1
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 127.0
-offset_top = 48.0
-offset_right = -126.0
-offset_bottom = -267.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Ruas de Feira"
+offset_left = 493.0
+offset_top = 418.0
+offset_right = -463.0
+offset_bottom = -146.0
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("2_svg")
+texture_hover = ExtResource("3_svg")
+
+[node name="Botão_Menu" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1014.0
+offset_top = 31.0
+offset_right = -54.0
+offset_bottom = -533.0
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("8_1h81e")
+texture_hover = ExtResource("9_oxedt")
+
+[node name="Botão_Audio_on" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 46.0
+offset_top = 22.0
+offset_right = -1022.0
+offset_bottom = -542.0
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("5_7naeq")
+texture_hover = ExtResource("6_owdii")
+
+[node name="Botão_Audio_off" type="TextureButton" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 46.0
+offset_top = 22.0
+offset_right = -1022.0
+offset_bottom = -542.0
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("7_r4tcf")
+texture_hover = ExtResource("10_u2kpo")
+
+[node name="painel de configuração" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 313.0
+offset_top = 149.0
+offset_right = 837.0
+offset_bottom = 551.0
+texture = ExtResource("12_nunly")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="painel de configuração"]
+layout_mode = 0
+offset_left = 69.0
+offset_top = -68.0
+offset_right = 427.0
+offset_bottom = 61.0
+texture = ExtResource("13_amlae")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="painel de configuração/TextureRect"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = -16.0
+offset_right = 312.0
+offset_bottom = 94.0
+theme_override_font_sizes/font_size = 80
+text = "Menu"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Botoes" type="VBoxContainer" parent="Panel"]
+[node name="TextureButton" type="TextureButton" parent="painel de configuração"]
 layout_mode = 2
-offset_left = 27.0
-offset_top = 94.0
-offset_right = 384.0
-offset_bottom = 265.0
+offset_left = 119.0
+offset_top = 301.0
+offset_right = 410.0
+offset_bottom = 368.0
+texture_normal = ExtResource("14_fa1d7")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="Botoes#IniciarJogoBotao" type="Button" parent="Panel/Botoes"]
-layout_mode = 2
-text = "Iniciar Jogo"
-
-[node name="Botoes#EscolherEstagioBotao" type="Button" parent="Panel/Botoes"]
-layout_mode = 2
-text = "Escolher Estágio"
-
-[node name="Botoes#GaleriaCulturalBotao" type="Button" parent="Panel/Botoes"]
-layout_mode = 2
-text = "Galeria Cultural"
-
-[node name="Botoes#DesafiosLocaisBotao" type="Button" parent="Panel/Botoes"]
-layout_mode = 2
-text = "Desafios Locais"
-
-[node name="Botoes#ConfiguracoesBotao" type="Button" parent="Panel/Botoes"]
-layout_mode = 2
-text = "Configurações"
+[node name="TextureButton2" type="TextureButton" parent="painel de configuração"]
+layout_mode = 0
+offset_left = 466.0
+offset_top = -22.0
+offset_right = 541.0
+offset_bottom = 54.0
+texture_normal = ExtResource("15_4n68k")
+ignore_texture_size = true
+stretch_mode = 0
