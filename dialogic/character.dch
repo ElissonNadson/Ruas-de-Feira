@@ -1,0 +1,29 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(0.246094, 0.840973, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "Normal",
+"description": "",
+"display_name": "Pedro",
+"mirror": false,
+"nicknames": ["Pedro"],
+"offset": Vector2(0, 0),
+"portraits": {
+"Normal": {
+"export_overrides": {
+"image": "\"res://Assets/Personagens/pedro-removebg-preview.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 1.0
+}

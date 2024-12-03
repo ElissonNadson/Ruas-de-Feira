@@ -46,7 +46,7 @@ func fade_out():
 	tween.connect("finished", Callable(self, "mostrar_proximo_logo"))
 
 func mudar_para_proxima_cena():
-	get_tree().change_scene_to_file("res://Scenes/Menu/Tela_Menu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Tela_Menu.tscn")
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):  # Verifica se a tecla espaço foi pressionada
