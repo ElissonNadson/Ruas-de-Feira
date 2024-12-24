@@ -30,6 +30,7 @@ directories/dtl_directory={
 layout/style_list=[]
 layout/default_style="Default"
 glossary/default_case_sensitive=true
+variables={}
 
 [display]
 

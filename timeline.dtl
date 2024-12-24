@@ -1,2 +1,5 @@
-character: ola meu amigos, aqui é o pedro ^^ 
-character: eu amo as pessoas 
+[background arg="res://Assets/Cenarios/Feira de santana.webp" fade="0.0"]
+unit_test_character: ola meu amigos, aqui é o pedro ^^
+character: eu amo as pessoas
+[end_timeline]
+setting  = ""
